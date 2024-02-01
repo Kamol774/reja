@@ -1,6 +1,7 @@
 console.log("Web serverni boshlash");
 
 const express = require("express");
+const res = require("express/lib/response");
 const app = express();     // expressning 'app' objectini yaratamiz
 const http = require("http");
 
@@ -13,17 +14,18 @@ app.use(express.urlencoded({extended: true}));   // (traditional) form request d
 
 // 3: Views code
 app.set("views", "views");    
-app.set("view enjine", "ejs");   // ejs - framework.   BSSR (backend-server-side-rendering) backend da frontend ni (quramiz) ishga tushiramiz
+app.set("view engine", "ejs");   //  BSSR (backend-server-side-rendering) backend da frontend ni (quramiz) ishga tushiramiz
 
 // 4: Routing code  (har bir page uchun link yaratamiz)
-// page - hello
-app.get("/hello", function(req, res) {
-  res.end('<h1>Hello World</h1>');
+app.post("/create-item", (req, res) => {
+  console.log(req.body);
+  res.json({test: "success"});
+})
+
+app.get("/", function(req, res) {
+  res.render("harid");
 });
-// page - yangiliklar 
-app.get("/news", function(req, res) {
-  res.end("<h1>Yangiliklar bo'limidasiz</h1>");
-});
+
 
 const server = http.createServer(app);
 let PORT = 3000;
