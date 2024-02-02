@@ -1,37 +1,37 @@
 console.log("Dastlabki vazifa");
+console.log("");
 
-console.log("Web serverni boshlash");
+const calculate = require('./hisob.js');
 
-const express = require("express");
-const res = require("express/lib/response");
-const app = express();     // expressning 'app' objectini yaratamiz
-const http = require("http");
+const natija = calculate.kopaytirish(80, 30);
+console.log("Natija:", natija);
+console.log("=====================");
 
-// 1: Kirish code      express - framework
-app.use(express.static("public"));   // har qanday kelayotgan zaproslar uchun 'public' folderni clientlarga ochib beryapmiz
-app.use(express.json());     // kelayotgan 'json' formatdagi datani bizga object holatiga o'girib beradi 
-app.use(express.urlencoded({extended: true}));   // (traditional) form request dan POST qilingan narsalarni express server qabul qilishi uchun
+const natija1 = calculate.qoshish(80, 30);
+console.log("Natija:", natija1);
+console.log("=====================");
 
-// 2: Session code  -> xozircha foydalanmaymiz
+const natija2 = calculate.ayirish(80, 30);
+console.log("Natija:", natija2);
+console.log("=====================");
 
-// 3: Views code
-app.set("views", "views");    
-app.set("view engine", "ejs");   //  BSSR (backend-server-side-rendering) backend da frontend ni (quramiz) ishga tushiramiz
+const natija3 = calculate.bulish(80, 30);
+console.log("Natija:", natija3);
 
-// 4: Routing code  (har bir page uchun link yaratamiz)
-app.post("/create-item", (req, res) => {
-  console.log(req.body);
-  res.json({test: "success"});
-})
+console.log("========================================================================");
 
-app.get("/", function(req, res) {
-  res.render("harid");
-});
+ 
 
+const Account = require("./account");
 
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function() {
-  console.log(`The server is running successfully on port: ${PORT}`);
-});
+Account.tellMeAboutClass();
+Account.tellMeTime();
+const myAccount = new Account('Kevin', 250000, 4568645642315263486);
 
+myAccount.tellMeBalance();
+console.log("*****************")
+myAccount.withdrowMoney(150000);
+console.log("*****************")
+myAccount.makeDeposit(77777);
+console.log("*****************")
+myAccount.giveMeDetails();
