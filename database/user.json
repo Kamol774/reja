@@ -1,10 +1,10 @@
 {
-  "name": "Steve",
+  "name": "Kevin",
   "profession": "Software Engineer",
   "age": 20,
   "residence": "S.Korea",
   "address": "S.Korea, Yeosu",
-  "languages": ["Uzbek", "Korean", "English"],
+  "languages": ["Uzbek", "English", "Korean"],
   "skills": ["Html", "Css", "Js", "NodeJs", "Python"],
   "extra_skills": ["Bootstrap, Materialize", "Styling, Sass", "Django, Flask", "GIT Knowledge"],
   "work_place": "IT Company",

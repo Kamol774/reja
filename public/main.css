@@ -1,0 +1,235 @@
+.frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #e5e5e5;
+}
+
+.main-frame {
+  position: relative;
+  width: 1440px;
+  height: 1312px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2px;
+  background-color: #c2bd9e;
+}
+
+.main-frame .left-frame {
+  position: relative;
+  width: 305px;
+  height: 1315px;
+  background-color: #fff;
+} 
+
+.main-frame .mid-frame {
+  position: relative;
+  width: 970px;
+  height: 1259px;
+  margin-left: 30px;
+  margin-right: 27px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-frame .right-frame {
+  position: relative;
+  width: 108px;
+  height: 1315px;
+  background: #fff;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-frame .left-frame .left_1 {
+  position: relative;
+  width: 228px;
+  height: 267px;
+  margin-top: 50px;
+  margin-left: 37px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;    
+}
+
+.main-frame .left_1 .left_img {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 156.16px;
+  height: 142.53px;
+  margin-bottom: 29.46px;
+  padding-top: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.main-frame .left_1 .left_name {
+  position: relative;
+  width: 66.63px;
+  height: 20.9px;
+  margin-bottom: 6.65px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 123.6%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-transform: capitalize;
+  color: #2b2b2b;
+}
+
+.main-frame .left_1 .left_prof {
+  position: relative;
+  width: 147.84px;
+  height: 25.65px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: capitalize;
+  font-feature-settings:"calt" off, "kern" off;
+  color: #767676;
+}
+
+.left_social {
+  position: relative;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 238px;
+  margin-top: 19px;
+}
+
+.link_href {
+  text-decoration: none;
+  color: black;
+}
+
+.icons {
+  position: relative;
+  width: 24.99px;
+  height: 22.8px;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
+  background: #ffb400;
+}
+
+.icon {
+  position: absolute;
+  left: 20%;
+  /* right: 27.08%; */
+  margin-top: 3.86px;
+}
+
+.marginer {
+  position: relative;
+  width: 220px;
+  height: 0;
+  margin-left: 40px;
+  margin-bottom: 25px;
+  margin-top: 39px;
+  border: 1.5px solid #f0f0f6;
+}
+
+.main-frame .left-frame .left_2 {
+  position: relative;
+  width: 221px;
+  height: 126px;
+  margin-left: 44px;
+}
+
+.list-row {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16.5px;
+}
+
+.list-row li:not(:last-child) {
+  padding-bottom: 10px;
+}
+
+.list-row li {
+  position: relative;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.left_key {
+  padding: 2px;
+  background-color: #ffb400;
+}
+
+.main-frame .left-frame .left_3 {
+  position: relative;
+  width: 220px;
+  height: 153px;
+  margin-top: 25px;
+  margin-left: 45px;
+}
+
+.left_title {
+  font-size: 18px;
+  font-style: sans-serif;
+  font-weight: bold;
+  color: #2B2B2B;
+}
+
+.left_3 .list-row li {
+  position: relative;
+  align-items:center;
+  padding-bottom: 0px;
+}
+
+.main-frame .left-frame .left_4 {
+  position: relative;
+  width: 220px;
+  height: 252px;
+  margin-top: 25px;
+  margin-left: 45px;
+}
+
+.left_4 .list-row li {
+  position: relative;
+  align-items:center;
+  padding-bottom: 3px;
+}
+
+.main-frame .left-frame .left_5 {
+  position: relative;
+  width: 186px;
+  height: 148px;
+  margin-top: 25px;
+  margin-left: 45px;
+}
+
+.left_5 ul {
+  flex-direction:column;
+  justify-content: none;
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16.5px;
+  line-height: 28px;
+}
+
+.left_5 ul li {
+  display: flex;
+}
+
+.left_5 ul li img {
+  padding-right: 15px;
+}
