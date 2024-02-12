@@ -34,9 +34,18 @@
         </form>
       </div>
 
-  <button class="btn btn-danger" id="clean-all" style="border-radius:20px">
-    Hammasini o'chirish
-  </button> 
+      <ul id="item-list" class="list-group pb-5">
+        <% items.map(function(item) { %>
+        <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+        >
+          <span class="item-text"><%= item.reja %></span>  
+          <div>
+            <button data_id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">O'zgartirish</button>
+            <button data_id="<%=item._id%>" class="btn btn-danger" id="clean-all" style="border-radius:20px">O'chirish</button> 
+          </div>
+        </li>  
+        <% }) %>
+      </ul>
 
   </div>
 </body>
