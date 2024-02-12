@@ -1,3 +1,16 @@
+// B-TASK
+
+function countDigit(count) {
+  m = (count.match(/\d/g) || []).length
+  console.log(`Berilgan jumlada ${m}ta raqam qatnashgan`)
+}
+countDigit('1das2c78dsd6vds5fd5s')
+
+console.log("=========================================================================================================================")
+
+
+
+
 // A-TASK
 
 
@@ -16,17 +29,17 @@
 
 // Callback va Asynchronous functionlarni qo'llash:
 
-console.log("Jack Ma maslahatlalri");
-console.log("*********************");
+// console.log("Jack Ma maslahatlalri");
+// console.log("*********************");
 
-const list = [
-  "yaxshi talaba bo'ling",    // 0-20 yoshlar oralig'i
-  "to'g'ri boshliq tanlang va ko'proq xato qiling",    // 20-30 yoshlar oralig'i
-  "o'zingizga ishlashni boshlang",     // 30-40 yoshlar oralig'i  
-  "siz kuchli bo'lgan narsalarni qiling",     // 40-50 yoshlar oralig'i
-  "yoshlarga investitsiya qiling",    // 50-60 yoshlar oralig'i
-  "endi dam oling, foydasi yo'q"      // 60 yoshdan yuqori
-];
+// const list = [
+//   "yaxshi talaba bo'ling",    // 0-20 yoshlar oralig'i
+//   "to'g'ri boshliq tanlang va ko'proq xato qiling",    // 20-30 yoshlar oralig'i
+//   "o'zingizga ishlashni boshlang",     // 30-40 yoshlar oralig'i  
+//   "siz kuchli bo'lgan narsalarni qiling",     // 40-50 yoshlar oralig'i
+//   "yoshlarga investitsiya qiling",    // 50-60 yoshlar oralig'i
+//   "endi dam oling, foydasi yo'q"      // 60 yoshdan yuqori
+// ];
 
 //=========================================================================================================================
 
@@ -98,30 +111,30 @@ const list = [
 
 //=========================================================================================================================
 
-// PROMISE 
+// // PROMISE 
 
-  function maslahatBering(a) {
-    return new Promise((resolve, reject) => {
+//   function maslahatBering(a) {
+//     return new Promise((resolve, reject) => {
 
-      if(typeof a !== 'number') reject("Please, insert a number");
-      else if (a <= 20) return list[0];
-      else if (a > 20 && a <= 30) resolve(list[1]);
-      else if (a > 30 && a <= 40) resolve(list[2]);
-      else if (a > 40 && a <= 50) resolve(list[3]);
-      else if (a > 50 && a <= 60) resolve(list[4]);
-      else {        
-        setTimeout(function() {
-          resolve(list[5]); 
-        }, 2000);
-      }
-    })
-}
+//       if(typeof a !== 'number') reject("Please, insert a number");
+//       else if (a <= 20) return list[0];
+//       else if (a > 20 && a <= 30) resolve(list[1]);
+//       else if (a > 30 && a <= 40) resolve(list[2]);
+//       else if (a > 40 && a <= 50) resolve(list[3]);
+//       else if (a > 50 && a <= 60) resolve(list[4]);
+//       else {        
+//         setTimeout(function() {
+//           resolve(list[5]); 
+//         }, 2000);
+//       }
+//     })
+// }
 
 
-  maslahatBering(65)
-.then((data) => {
-  console.log('javob:', data)
-})
-.catch((err) => {
-  console.log('ERoR',err)
-});
+//   maslahatBering(65)
+// .then((data) => {
+//   console.log('javob:', data)
+// })
+// .catch((err) => {
+//   console.log('ERoR',err)
+// });
