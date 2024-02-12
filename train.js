@@ -1,5 +1,6 @@
 // A-TASK
 
+
 // function countletter(a, b) {
 //   list = b.split('').filter((ele, index) => {
 //     return ele === a;  
@@ -31,27 +32,27 @@ const list = [
 
 // birinchi usul:
 
-   // CALLBACK function
-function maslahatBering(a, callback) {
-  if(typeof a !== 'number') callback("Please, insert a number", null);
-  else if (a <= 20) callback(null, list[0]);
-  else if (a > 20 && a <= 30) callback(null, list[1]);
-  else if (a > 30 && a <= 40) callback(null, list[2]);
-  else if (a > 40 && a <= 50) callback(null, list[3]);
-  else if (a > 50 && a <= 60) callback(null, list[4]);
-  else {
-    setTimeout(function() {
-      callback(null, list[5]);
-    }, 3000);
-  }
-}
+//    // CALLBACK function
+// function maslahatBering(a, callback) {
+//   if(typeof a !== 'number') callback("Please, insert a number", null);
+//   else if (a <= 20) callback(null, list[0]);
+//   else if (a > 20 && a <= 30) callback(null, list[1]);
+//   else if (a > 30 && a <= 40) callback(null, list[2]);
+//   else if (a > 40 && a <= 50) callback(null, list[3]);
+//   else if (a > 50 && a <= 60) callback(null, list[4]);
+//   else {
+//     setTimeout(function() {
+//       callback(null, list[5]);
+//     }, 3000);
+//   }
+// }
 
-console.log('passed here: 0');
-maslahatBering(65, (err, data) => {
-  if (err) console.log('ERRoR:', err);
-  else console.log('javob:', data);
-});
-console.log('passed here: 1');
+// console.log('passed here: 0');
+// maslahatBering(65, (err, data) => {
+//   if (err) console.log('ERRoR:', err);
+//   else console.log('javob:', data);
+// });
+// console.log('passed here: 1');
 
 
 
@@ -61,7 +62,7 @@ console.log('passed here: 1');
 // ikkinchi usul:
 
 
-// async function maslahatBering(a) {
+//   async function maslahatBering(a) {
 //   if(typeof a !== 'number') throw new Error("Please, insert a number");
 //   else if (a <= 20) return list[0];
 //   else if (a > 20 && a <= 30) return list[1];
@@ -96,3 +97,31 @@ console.log('passed here: 1');
 // });
 
 //=========================================================================================================================
+
+// PROMISE 
+
+  function maslahatBering(a) {
+    return new Promise((resolve, reject) => {
+
+      if(typeof a !== 'number') reject("Please, insert a number");
+      else if (a <= 20) return list[0];
+      else if (a > 20 && a <= 30) resolve(list[1]);
+      else if (a > 30 && a <= 40) resolve(list[2]);
+      else if (a > 40 && a <= 50) resolve(list[3]);
+      else if (a > 50 && a <= 60) resolve(list[4]);
+      else {        
+        setTimeout(function() {
+          resolve(list[5]); 
+        }, 2000);
+      }
+    })
+}
+
+
+  maslahatBering(65)
+.then((data) => {
+  console.log('javob:', data)
+})
+.catch((err) => {
+  console.log('ERoR',err)
+});
