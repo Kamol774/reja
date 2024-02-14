@@ -5,6 +5,7 @@ const fs = require("fs");
 
 // MongoDB ni chaqirish
 const db = require("./server").db(); // shu orqali db ga malumotlar yozish, o'chirish mumkin
+const mongodb = require("mongodb");
 
 
 let user;
@@ -30,7 +31,7 @@ app.set("views", "views");    // html~css ma'lumotlarini 'views' papkasini ichid
 app.set("view engine", "ejs");   //  'view engine'-miz 'ejs' ekanligini ko'rsatib o'tyapmiz
 
 // 4: Routing code  (har bir page uchun link yaratamiz)
-app.post("/create-item", (req, res) => {
+app.post("/create-item", (req, res) => {     // "/create-item"-> endpoint deyiladi
   console.log('user entered /create-item');
   //   TODO: code with db here  
   console.log(req.body);
@@ -38,6 +39,16 @@ app.post("/create-item", (req, res) => {
   db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
     res.json(data.ops[0])
   });
+});
+
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  console.log(id);
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function(err, data) {
+    res.json({ state: "success" });
+  })
 });
 
 app.get("/author", (req, res) => {
