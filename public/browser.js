@@ -1,4 +1,3 @@
-const app = require("app");
 
 function itemTemplate(item) {
   return `<li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
@@ -63,6 +62,15 @@ document
         })
       }
     }
+   // delete-all 
+  document.getElementById("clean-all").addEventListener("click", function() {
+    axios
+    .post("/delete-all", {delete_all: true})
+    .then(response => {
+      console.log(response.data.state);
+      document.location.reload();
+    })
+  });
     
   });
 
