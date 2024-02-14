@@ -1,12 +1,88 @@
+// D-TASK
+/* Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); 
+shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! 
+shop.sotish('non', 3) & 
+shop.qabul('cola', 4) & 
+shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+*/
+const moment = require('moment');
+
+const time = moment().format("HH:mm"); 
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  sotish(items, amount) {
+    if (items === "non") {
+      if (this.non >= amount) {
+        this.non -= amount;
+      }
+    }
+
+    if (items === "lagmon") {
+      if (this.lagmon >= amount) {
+        this.lagmon -= amount;
+      }
+    }
+
+    if (items === "cola") {
+      if (this.cola >= amount) {
+        this.cola -= amount;
+      }
+    }
+
+    return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola bor`);
+  }
+
+  qabul(items, amount) {
+    
+    if (items === "non") {
+      this.non += amount;
+    }
+
+    if (items === "lagmon") {
+      this.lagmon += amount;
+    }
+
+    if (items === "cola") {
+      this.cola += amount;
+    }
+    return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola bor`);
+  }
+
+  qoldiq() {
+    return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola qolgan!`);
+  }
+}
+
+const shop = new Shop(6, 2, 4);
+
+shop.qabul("non", 3)
+shop.sotish("cola", 2);
+shop.qoldiq()
+
+console.log(shop.qoldiq());
+
+
+
+
+
+
+
 // B-TASK
 
-function countDigit(count) {
-  m = (count.match(/\d/g) || []).length
-  console.log(`Berilgan jumlada ${m}ta raqam qatnashgan`)
-}
-countDigit('1das2c78dsd6vds5fd5s')
+// function countDigit(count) {
+//   m = (count.match(/\d/g) || []).length
+//   console.log(`Berilgan jumlada ${m}ta raqam qatnashgan`)
+// }
+// countDigit('1das2c78dsd6vds5fd5s')
 
-console.log("=========================================================================================================================")
+// console.log("=========================================================================================================================")
 
 
 
