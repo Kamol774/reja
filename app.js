@@ -1,3 +1,4 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();     // expressning 'app' objectini yaratamiz
@@ -32,8 +33,7 @@ app.set("view engine", "ejs");   //  'view engine'-miz 'ejs' ekanligini ko'rsati
 
 // 4: Routing code  (har bir page uchun link yaratamiz)
 app.post("/create-item", (req, res) => {     // "/create-item"-> endpoint deyiladi
-  console.log('user entered /create-item');
-  //   TODO: code with db here  
+  console.log('user entered /create-item'); //   TODO: code with db here  
   console.log(req.body);
   const new_reja = req.body.reja
   db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
@@ -50,6 +50,18 @@ app.post("/delete-item", (req, res) => {
     res.json({ state: "success" });
   })
 });
+
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    { _id: new mongodb.ObjectId(data.id) }, 
+    { $set: {reja: data.new_input} }, 
+    function(err, data) {
+      res.json({state: "success"})
+    }
+  )
+})
 
 app.get("/author", (req, res) => {
   res.render("author", {user: user});
