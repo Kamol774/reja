@@ -1,4 +1,4 @@
-const { response } = require("../app");
+const app = require("app");
 
 function itemTemplate(item) {
   return `<li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
@@ -30,7 +30,6 @@ document
   });
 
   document.addEventListener("click", function(e){
-    
     // delete operatsiyalari
     console.log(e.target);
     if (e.target.classList.contains("delete-me")) {

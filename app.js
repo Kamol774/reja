@@ -58,10 +58,9 @@ app.post("/edit-item", (req, res) => {
     { _id: new mongodb.ObjectId(data.id) }, 
     { $set: {reja: data.new_input} }, 
     function(err, data) {
-      res.json({state: "success"})
-    }
-  )
-})
+      res.json({ state: "success" })
+    })
+});
 
 app.get("/author", (req, res) => {
   res.render("author", {user: user});
