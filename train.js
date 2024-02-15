@@ -1,3 +1,43 @@
+//Animals Challenge
+
+const animals = ["fox", "ant", "bird", "frog", "duck", "goat", "cow"];
+new_list=[]
+
+function findAnimals(a) {
+    letters = a.split('')
+    for (animal of animals) {
+      const animalLetters = animal.split('');
+      const usedLetters = animalLetters.filter(letter => letters.includes(letter));
+      if (animalLetters[0] === usedLetters[0]) {
+        if (animalLetters.length === usedLetters.length) {
+          new_list.unshift(animalLetters.join(''))
+        }
+      };
+    } 
+    return new_list
+  }
+  const javob = findAnimals("xdngofat");
+  console.log("javob:", javob)
+
+
+// D-TASK  (Daily task)
+console.log("================================================")
+/*Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+*/
+
+function findSimilarity(a, b) {
+  const a1 = a.split('').sort();
+  const b1 = b.split('').sort();
+  return a1.join('') == b1.join('')
+  }
+
+  console.log("Are they similar? ", findSimilarity("salom", "masol"))
+  console.log("Are they similar? ", findSimilarity("salom", "kalom"))
+
+
+
+
 // D-TASK
 /* Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
 MASALAN: const shop = new Shop(4, 5, 2); 
@@ -5,68 +45,68 @@ shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
 shop.sotish('non', 3) & 
 shop.qabul('cola', 4) & 
 shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
-*/
-const moment = require('moment');
+// */
+// const moment = require('moment');
 
-const time = moment().format("HH:mm"); 
+// const time = moment().format("HH:mm"); 
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  sotish(items, amount) {
-    if (items === "non") {
-      if (this.non >= amount) {
-        this.non -= amount;
-      }
-    }
+//   sotish(items, amount) {
+//     if (items === "non") {
+//       if (this.non >= amount) {
+//         this.non -= amount;
+//       }
+//     }
 
-    if (items === "lagmon") {
-      if (this.lagmon >= amount) {
-        this.lagmon -= amount;
-      }
-    }
+//     if (items === "lagmon") {
+//       if (this.lagmon >= amount) {
+//         this.lagmon -= amount;
+//       }
+//     }
 
-    if (items === "cola") {
-      if (this.cola >= amount) {
-        this.cola -= amount;
-      }
-    }
+//     if (items === "cola") {
+//       if (this.cola >= amount) {
+//         this.cola -= amount;
+//       }
+//     }
 
-    return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola bor`);
-  }
+//     return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola bor`);
+//   }
 
-  qabul(items, amount) {
+//   qabul(items, amount) {
     
-    if (items === "non") {
-      this.non += amount;
-    }
+//     if (items === "non") {
+//       this.non += amount;
+//     }
 
-    if (items === "lagmon") {
-      this.lagmon += amount;
-    }
+//     if (items === "lagmon") {
+//       this.lagmon += amount;
+//     }
 
-    if (items === "cola") {
-      this.cola += amount;
-    }
-    return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola bor`);
-  }
+//     if (items === "cola") {
+//       this.cola += amount;
+//     }
+//     return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola bor`);
+//   }
 
-  qoldiq() {
-    return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola qolgan!`);
-  }
-}
+//   qoldiq() {
+//     return (`hozir ${time} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola qolgan!`);
+//   }
+// }
 
-const shop = new Shop(6, 2, 4);
+// const shop = new Shop(6, 2, 4);
 
-shop.qabul("non", 3)
-shop.sotish("cola", 2);
-shop.qoldiq()
+// shop.qabul("non", 3)
+// shop.sotish("cola", 2);
+// shop.qoldiq()
 
-console.log(shop.qoldiq());
+// console.log(shop.qoldiq());
 
 
 
