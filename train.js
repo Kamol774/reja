@@ -1,3 +1,17 @@
+// E-TASK
+/* Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh" */
+
+function getReverse(word) {
+  result = word.split('').reverse()
+  return console.log("E-Task javobi:", result.join(''))
+}
+
+getReverse("hello")
+
+
+console.log("================================================")
+
 //Animals Challenge
 
 const animals = ["fox", "ant", "bird", "frog", "duck", "goat", "cow"];
@@ -17,23 +31,23 @@ function findAnimals(a) {
     return new_list
   }
   const javob = findAnimals("xdngofat");
-  console.log("javob:", javob)
+  console.log("Animals Challenge => javobi:", javob)
 
+  console.log("================================================")
 
 // D-TASK  (Daily task)
-console.log("================================================")
-/*Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+/* Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
 MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 */
 
-function findSimilarity(a, b) {
-  const a1 = a.split('').sort();
-  const b1 = b.split('').sort();
-  return a1.join('') == b1.join('')
-  }
+// function findSimilarity(a, b) {
+//   const a1 = a.split('').sort();
+//   const b1 = b.split('').sort();
+//   return a1.join('') == b1.join('')
+//   }
 
-  console.log("Are they similar? ", findSimilarity("salom", "masol"))
-  console.log("Are they similar? ", findSimilarity("salom", "kalom"))
+//   console.log("Are they similar? ", findSimilarity("salom", "masol"))
+//   console.log("Are they similar? ", findSimilarity("salom", "kalom"))
 
 
 

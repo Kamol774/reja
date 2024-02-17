@@ -20,11 +20,10 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 // 1: Kirish code      express - framework   app.use ->middleware
 app.use(express.static("public"));   // har qanday kelayotgan zaproslar uchun 'public' folderni clientlarga ochib beryapmiz
-app.use(express.json());     // kelayotgan 'json' formatdagi datani bizga object holatiga o'girib beradi 
+app.use(express.json());     // kelayotgan 'json' formatdagi datani bizga object holatiga o'girib beradi / (json objectini tanib olish uchun)
 app.use(express.urlencoded({extended: true}));   // (traditional) form request dan POST qilingan narsalarni express server qabul qilishi uchun
 
 // 2: Session code  -> xozircha foydalanmaymiz
-
 
 // app.set -> configuration
 // 3: Views code    (backend da frontend ni yasaymiz) BSSR (backend-server-side-rendering) backend da frontend ni (quramiz) ishga tushiramiz
@@ -33,7 +32,7 @@ app.set("view engine", "ejs");   //  'view engine'-miz 'ejs' ekanligini ko'rsati
 
 // 4: Routing code  (har bir page uchun link yaratamiz)
 app.post("/create-item", (req, res) => {     // "/create-item"-> endpoint deyiladi
-  console.log('user entered /create-item'); //   TODO: code with db here  
+  console.log('user entered /create-item');
   console.log(req.body);
   const new_reja = req.body.reja
   db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
