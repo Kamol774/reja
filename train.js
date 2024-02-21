@@ -1,39 +1,36 @@
+// F-TASK
+/* Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+MASALAN: getReverse("hello") return true return qiladi */
+
+function findDoublers(word) {
+  for (let i = 0; i < word.length; i++) {
+      for (let j = i + 1; j < word.length; j++) {
+          if (word[i] === word[j]) {
+              return true;
+          }
+      }
+  }
+  return false;
+}
+console.log(findDoublers("ehoej"))
+  
+  
+  
+
+
+
 // E-TASK
 /* Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 MASALAN: getReverse("hello") return qilsin "olleh" */
 
-function getReverse(word) {
-  result = word.split('').reverse()
-  return console.log("E-Task javobi:", result.join(''))
-}
+// function getReverse(word) {
+//   result = word.split('').reverse()
+//   return console.log("E-Task javobi:", result.join(''))
+// }
 
-getReverse("hello")
+// getReverse("hello")
 
 
-console.log("================================================")
-
-//Animals Challenge
-
-const animals = ["fox", "ant", "bird", "frog", "duck", "goat", "cow"];
-new_list=[]
-
-function findAnimals(a) {
-    letters = a.split('')
-    for (animal of animals) {
-      const animalLetters = animal.split('');
-      const usedLetters = animalLetters.filter(letter => letters.includes(letter));
-      if (animalLetters[0] === usedLetters[0]) {
-        if (animalLetters.length === usedLetters.length) {
-          new_list.unshift(animalLetters.join(''))
-        }
-      };
-    } 
-    return new_list
-  }
-  const javob = findAnimals("xdngofat");
-  console.log("Animals Challenge => javobi:", javob)
-
-  console.log("================================================")
 
 // D-TASK  (Daily task)
 /* Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
